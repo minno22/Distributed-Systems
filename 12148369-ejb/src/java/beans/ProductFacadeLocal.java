@@ -30,4 +30,11 @@ public interface ProductFacadeLocal {
 
     int count();
     
+    void addProduct(String Description, double cost, int quantity);
+    
+    public List<Product> getAllProducts();
+    
+    public void update(int id, String Description, double cost, int quantity);
+    
+    public Product getProduct(int id);
 }

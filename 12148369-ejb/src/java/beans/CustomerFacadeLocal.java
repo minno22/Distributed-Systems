@@ -32,6 +32,8 @@ public interface CustomerFacadeLocal {
     
     void addCustomer(String name, String city);
     
+    public List<Customer> getAllCustomers();
+    
     public List<Customer> getCustomerByName(String c);
     
     public List<Customer> getCustomerByCity(String c);

@@ -30,4 +30,10 @@ public interface PurchaseOrderFacadeLocal {
 
     int count();
     
+    public void addOrder(int custId, int productId, int quantity);
+    
+    public List<PurchaseOrder> getOrder(int orderId);
+    
+    public List<PurchaseOrder> getAllOrders();
+    
 }

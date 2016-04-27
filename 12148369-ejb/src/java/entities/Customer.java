@@ -77,10 +77,10 @@ public class Customer implements Serializable {
     @Column(name = "CREDIT_LIMIT")
     private Integer creditLimit;
     @JoinColumn(name = "DISCOUNT_CODE", referencedColumnName = "DISCOUNT_CODE")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private DiscountCode discountCode;
     @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private MicroMarket zip;
 
     public Customer() {

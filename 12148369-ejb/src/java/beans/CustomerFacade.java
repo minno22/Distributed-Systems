@@ -84,7 +84,7 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
                 .executeUpdate();*/
             
         }catch (Exception e) {
-            System.out.println("niall's error " + e);
+            System.out.println("error " + e);
         }
     }
     
@@ -144,6 +144,14 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
     
     public CustomerFacade() {
         super(Customer.class);
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() {
+         // create named query and set parameter
+        Query query = em.createNamedQuery("Customer.findAll");
+        // return query result
+        return query.getResultList();
     }
     
 }
