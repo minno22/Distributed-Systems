@@ -17,17 +17,14 @@ and open the template in the editor.
                 Enter Customer Name: 
                 <h:inputText value="#{myBean.customerName}"/>
                 <br/>
-                <h:commandButton action="showCustomerByName" value="Show by Name"/>
+                
                 Enter Customer City: 
                 <h:inputText value="#{myBean.customerCity}"/>
                 <br/>
-                <h:commandButton action="showCustomerByCity" value="Show by City"/>
+               
             </h:panelGrid>
             <br/>
-        <h:commandButton action="#{myBean.insertCustomer()}" value="Add Customer"/>
+        <h:commandButton action="#{myBean.insertCustomer()}index" value="Add Customer"/>
         </h:form>
-        
-        <br/><br/>
-        
     </h:body>
 </html>
