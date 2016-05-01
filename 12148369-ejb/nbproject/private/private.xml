@@ -3,22 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ProductFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/MicroMarketFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/AbstractFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/DiscountCodeFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ProductCodeFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/conf/persistence.xml</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/CustomerFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/Customer.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/Product.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/DiscountCode.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ManufacturerFacade.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ShowCustomerBean.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/MicroMarket.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/mySessionBean.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/ProductCode.java</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/showCustomerBeanLocal.java</file>
+            <file>file:/C:/Users/Eoghan/Desktop/EE4023%20Distributed%20Systems/NetBeansProjects/Distributed-Systems/12148369-ejb/src/java/beans/CustomerFacadeLocal.java</file>
+            <file>file:/C:/Users/Eoghan/Desktop/EE4023%20Distributed%20Systems/NetBeansProjects/Distributed-Systems/12148369-ejb/src/java/beans/CustomerFacade.java</file>
+            <file>file:/C:/Users/Eoghan/Desktop/EE4023%20Distributed%20Systems/NetBeansProjects/Distributed-Systems/12148369-ejb/src/java/entities/Customer.java</file>
         </group>
     </open-files>
 </project-private>
