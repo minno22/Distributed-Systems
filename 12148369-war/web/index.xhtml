@@ -24,7 +24,11 @@ and open the template in the editor.
                 <h:commandButton action="showCustomerByCity" value="Show by City"/>
             </h:panelGrid>
             <br/>
-        <h:commandButton value="Add Customer#{myBean.insertCustomer()}"/>
+        <h:commandButton action="#{myBean.insertCustomer()}" value="Add Customer"/><br/><br/>
+        Enter item to add to cart:
+        <h:inputText value="#{myBean.cartItem}"/>
+        <h:commandButton action="#{myBean.addToCart()}" value="Add to cart"/><br/>
+        <h:commandButton action="cartTesting" value="View Cart"/><br/>
         </h:form>
         
         <br/><br/>
