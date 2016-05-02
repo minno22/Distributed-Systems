@@ -162,5 +162,4 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
         // return query result
         return query.getResultList();
     }
-    
 }
