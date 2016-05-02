@@ -43,7 +43,7 @@ public interface CartInterface {
      */
     public String getItemList();
     
-   public List <String> getAllTitles();
+   public List <String> getAllItems();
    
    public List <Integer> getAllAmounts();
 }

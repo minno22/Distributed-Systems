@@ -71,7 +71,7 @@ public class Customer implements Serializable {
     @Column(name = "FAX")
     private String fax;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 40)
+    @Size(max = 500)
     @Column(name = "EMAIL")
     private String email;
     @Column(name = "CREDIT_LIMIT")

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Browse Catalog</title>
+    </h:head>
+    <h:body>
+        <h1>Browse Catalog</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <br/>
+                <h:commandButton action="showAllProducts" value="Browse all Products"/>
+                <br/><br/>
+                Enter Product ID: 
+                <h:inputText value="#{ProductBean.productID}"/>
+                <br/>
+                <h:commandButton action="showProductsById" value="Browse Products by ID"/>
+                Enter Product Name: 
+                <h:inputText value="#{ProductBean.productName}"/>
+                <br/>
+                <h:commandButton action="showProductsByName" value="Browse Prpoducts by Name"/>
+            </h:panelGrid>

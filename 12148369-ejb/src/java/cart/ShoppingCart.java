@@ -90,7 +90,7 @@ public class ShoppingCart implements CartInterface{
     //Needed to match the books we are adding and not displaying all
     
     @Override
-    public List <String> getAllTitles(){
+    public List <String> getAllItems(){
     List <String> booksInCart = new ArrayList<>();
         Set<String> keys = items.keySet();
         Iterator<String> it = keys.iterator();
