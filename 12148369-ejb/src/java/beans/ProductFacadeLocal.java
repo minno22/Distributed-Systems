@@ -37,4 +37,6 @@ public interface ProductFacadeLocal {
     public void update(int id, String Description, double cost, int quantity);
     
     public Product getProduct(int id);
+    
+    void removeProduct(String description);
 }

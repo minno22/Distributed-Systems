@@ -79,7 +79,10 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
 
     @Override
     public void update(int id, String Description, double cost, int quantity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          Product prod = getProduct(id);
+        if (prod != null) {
+            prod.setQuantityOnHand(quantity);
+        }
     }
 
     @Override
@@ -91,4 +94,8 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
         return result.get(0);
     }
     
+    @Override
+    public void removeProduct(String description){
+        Query query = em.createNamedQuery("Product.deleteProductFromTable").setParameter("description", description);
+    }
 }

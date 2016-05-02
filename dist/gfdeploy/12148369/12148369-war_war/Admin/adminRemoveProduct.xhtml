@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Remove Product</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Remove Product</h1>
+            Remove Product: <h:inputText value="#{productBean.description}"/><br/><br/>
+            <h:commandButton value="Remove" action="#{productBean.removeProduct()}"></h:commandButton><br/><br/><br/>
+        </h:form>
+    </h:body>
+</html>

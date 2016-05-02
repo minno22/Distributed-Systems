@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Product.findByMarkup", query = "SELECT p FROM Product p WHERE p.markup = :markup"),
     @NamedQuery(name = "Product.findByAvailable", query = "SELECT p FROM Product p WHERE p.available = :available"),
     @NamedQuery(name = "Product.findMaxId", query = "SELECT MAX(p.productId) FROM Product p"),
+    @NamedQuery(name = "Product.deleteProductFromTable", query = "DELETE FROM Product p WHERE p.description = :description"),
     @NamedQuery(name = "Product.findByDescription", query = "SELECT p FROM Product p WHERE p.description = :description")})
 public class Product implements Serializable {
 

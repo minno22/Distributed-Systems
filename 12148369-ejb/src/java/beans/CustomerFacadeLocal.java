@@ -30,7 +30,7 @@ public interface CustomerFacadeLocal {
 
     int count();
     
-    void addCustomer(String name, String city);
+    int addCustomer(String name, String password);
     
     public List<Customer> getAllCustomers();
     
