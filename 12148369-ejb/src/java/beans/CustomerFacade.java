@@ -38,54 +38,63 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
     }
 
     @Override
-    public void addCustomer(String name, String city){
-        try{
+    public int addCustomer(String name, String password)
+    {
+        List<Customer> existingCustomer = getCustomerByName(name); //CHECKS IF THERE IS A USER WITH THE SAME NAME IN THE DB
+        if(!(existingCustomer.isEmpty()))
+          {
+            return 1; //USER ALREADY EXISTS IN THE DATABASE SO NO NEED TO CREATE ANOTHER ONE
+          }
+        else{
+          try{
             //Using named queries prevents SQL Injection
             int id = (Integer) em.createNamedQuery("Customer.findMaxId").getSingleResult();
             id++;
-            Customer cust = new Customer();
-            cust.setCustomerId(id);
-            cust.setName(name);
-            cust.setCity(city);
+                Customer cust = new Customer();
+                cust.setCustomerId(id);
+                cust.setName(name);
+                cust.setCity(password);
             
-            Query query = em.createNamedQuery("DiscountCode.findByDiscountCode")
-                .setParameter("discountCode", "N");
+                Query query = em.createNamedQuery("DiscountCode.findByDiscountCode")
+                    .setParameter("discountCode", "N");
             
-            DiscountCode dc = (DiscountCode) query.getSingleResult();
-            cust.setDiscountCode(dc);
+                DiscountCode dc = (DiscountCode) query.getSingleResult();
+                cust.setDiscountCode(dc);
             
-            query = em.createNamedQuery("MicroMarket.findByZipCode")
-                .setParameter("zipCode", "95051");
+                query = em.createNamedQuery("MicroMarket.findByZipCode")
+                    .setParameter("zipCode", "95051");
             
-            MicroMarket mm = (MicroMarket) query.getSingleResult();
+                MicroMarket mm = (MicroMarket) query.getSingleResult();
             
-            cust.setZip(mm);
+                cust.setZip(mm);
             
             
             
-            ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-            Validator validator = factory.getValidator();
+                ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+                Validator validator = factory.getValidator();
 
-            Set<ConstraintViolation<Customer>> constraintViolations = validator.validate(cust);
+                Set<ConstraintViolation<Customer>> constraintViolations = validator.validate(cust);
 
-            if (constraintViolations.size() > 0 ) {
-                System.out.println("Constraint Violations occurred..");
-                 for (ConstraintViolation<Customer> contraints : constraintViolations) {
-                    System.out.println(contraints.getRootBeanClass().getSimpleName()+
-                    "." + contraints.getPropertyPath() + " " + contraints.getMessage());
-                 }
-            }
-            persist(cust);
+                if (constraintViolations.size() > 0 ) {
+                   System.out.println("Constraint Violations occurred..");
+                    for (ConstraintViolation<Customer> contraints : constraintViolations) {
+                       System.out.println(contraints.getRootBeanClass().getSimpleName()+
+                      "." + contraints.getPropertyPath() + " " + contraints.getMessage());
+                   }
+                }
+                persist(cust);
             
-            /*String query = "insert into Customer values(?)";
+                /*String query = "insert into Customer values(?)";
 
-            em.createNativeQuery(query)
-                .setParameter(1, "Tom")
-                .executeUpdate();*/
+             em.createNativeQuery(query)
+                    .setParameter(1, "Tom")
+                   .executeUpdate();*/
             
         }catch (Exception e) {
             System.out.println("error " + e);
         }
+        return 0;
+      }
     }
     
     @Override

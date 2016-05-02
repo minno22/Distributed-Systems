@@ -29,7 +29,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
     @NamedQuery(name = "Customer.findByCustomerId", query = "SELECT c FROM Customer c WHERE c.customerId = :customerId"),
-    @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name"),
+    @NamedQuery(name = "Customer.findCustomerIdByName", query = "SELECT c.customerId FROM Customer c WHERE c.name = :name"),
+    @NamedQuery(name = "Customer.findByName", query = "SELECT c.name FROM Customer c WHERE c.name = :name"),
+    @NamedQuery(name = "Customer.findByNumberOfNames", query = "SELECT COUNT(c.name) FROM Customer c WHERE c.name = :name"),
     @NamedQuery(name = "Customer.findByAddressline1", query = "SELECT c FROM Customer c WHERE c.addressline1 = :addressline1"),
     @NamedQuery(name = "Customer.findByAddressline2", query = "SELECT c FROM Customer c WHERE c.addressline2 = :addressline2"),
     @NamedQuery(name = "Customer.findByCity", query = "SELECT c FROM Customer c WHERE c.city = :city"),
@@ -153,7 +155,7 @@ public class Customer implements Serializable {
     public void setFax(String fax) {
         this.fax = fax;
     }
-
+    
     public String getEmail() {
         return email;
     }
