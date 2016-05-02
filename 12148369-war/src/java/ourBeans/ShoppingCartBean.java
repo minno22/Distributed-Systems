@@ -62,6 +62,12 @@ public class ShoppingCartBean {
         }
     }
     
+    public void addToCart2(String item, int quant){
+        if (checkAvailability()){
+            sc.addItem(item, quant);
+        }
+    }
+    
     public boolean checkAvailability(){
         //List<Product> allProds = productBean.getAll();
         //for (int i = 0; i < allProds.size(); i++)
@@ -72,6 +78,10 @@ public class ShoppingCartBean {
     
     public void removeItem(){
         sc.removeItem(cartItem, quantity);
+    }
+    
+    public void removeItem2(String item, int quant){
+        sc.removeItem(item, quant);
     }
     
     public void checkout(){
@@ -92,5 +102,19 @@ public class ShoppingCartBean {
                 //if(allProds.get(j).getDescription() == inCart.get(i).getDescription())
                     //toReturn.add(allProds.get(j));
         return toReturn;
+    }
+    
+    public List<ShoppingCartItemObject> displayCart(){
+        List<String> inCart = sc.getAllItems();
+        List<Integer> inCartQs = sc.getAllAmounts();
+        List<ShoppingCartItemObject> toReturn = new ArrayList<ShoppingCartItemObject>();
+        for (int i = 0; i < inCart.size(); i++){
+            toReturn.add(new ShoppingCartItemObject((int)inCartQs.get(i), inCart.get(i)));
+        }
+        return toReturn;
+    }
+    
+    public String viewCart(){
+        return sc.getItemList();
     }
 }

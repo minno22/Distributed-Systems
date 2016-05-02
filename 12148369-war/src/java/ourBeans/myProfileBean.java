@@ -22,7 +22,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class myProfileBean {
 
-    private int customerID;
+    public static int customerID;
     public String userType;
     public String customerMessage;
     
@@ -39,9 +39,9 @@ public class myProfileBean {
         return customerID;
     }
     
-    public void setCustomerID(int s){
+   /* public void setCustomerID(int s){
         this.customerID = s;
-    }
+    }*/
     
     public String getUserType(){
         return userType;
@@ -62,5 +62,9 @@ public class myProfileBean {
     public void editAccount(){
         Customer cust = customerBean.getCustomer(customerID);
         customerBean.update(customerID, cust.getName(), cust.getCity(), customerMessage);
+    }
+    
+    public static void setID(int id){
+        customerID = id;
     }
 }

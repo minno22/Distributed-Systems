@@ -15,14 +15,21 @@ and open the template in the editor.
         <h:form>
             <h:panelGrid columns="2">
                 <br/>
-                <h:commandButton action="showAllProducts" value="Browse all Products"/>
-                <br/><br/>
+                <h:commandButton action="BrowseAllProducts" value="Browse all Products"/>
+                <br/>
                 Enter Product ID: 
-                <h:inputText value="#{ProductBean.productID}"/>
+                <h:inputText value="#{productBean.productID}"/>
                 <br/>
                 <h:commandButton action="showProductsById" value="Browse Products by ID"/>
                 Enter Product Name: 
-                <h:inputText value="#{ProductBean.productName}"/>
+                <h:inputText value="#{productBean.description}"/>
                 <br/>
                 <h:commandButton action="showProductsByName" value="Browse Products by Name"/>
             </h:panelGrid>
+            <br/><br/>
+            <h:commandButton action="myCart" value="My Cart"/>
+            <br/><br/>
+            <h:commandButton action="customerMainPage" value="Main Page"/>
+        </h:form>
+    </h:body>
+</html>

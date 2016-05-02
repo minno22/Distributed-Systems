@@ -19,7 +19,7 @@ import javax.faces.bean.SessionScoped;
  * @author Niall
  */
 @ManagedBean
-@Named(value = "ProfilesBean")
+@Named(value = "customerBean")
 @SessionScoped
 public class CustomerBean {
 
@@ -77,10 +77,8 @@ public class CustomerBean {
         return customerBean.getCustomerByName(customerName);
     }
     
-    public void getCustomerByID(){
-        Customer c =  customerBean.getCustomer(customerID);
-        customerName = c.getName();
-        customerMessage = c.getFax();
+    public Customer getCustomerByID(){
+        return customerBean.getCustomer(customerID);
     }
     
     public void insertCustomer(){

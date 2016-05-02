@@ -6,6 +6,8 @@
 package ourBeans;
 
 import beans.ProductFacadeLocal;
+import entities.Product;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.faces.bean.ManagedBean;
@@ -27,6 +29,7 @@ public class ProductBean
     private String description;
     private double cost;
     private int quantity;
+    public int productID;
     
     public ProductBean() {
     }
@@ -55,6 +58,14 @@ public class ProductBean
         this.quantity = quantity;
     }
     
+    public int getProductID() {
+        return productID;
+    }
+
+    public void setProductID(int i) {
+        this.productID = i;
+    }
+    
     public void addNewProduct(){
         newProductBean.addProduct(description, cost, quantity);
     }
@@ -63,5 +74,15 @@ public class ProductBean
         newProductBean.removeProduct(description);
     }
     
+    public List<Product> getAllProducts(){
+        return newProductBean.getAllProducts();
+    }
     
+    public Product getProductByID(){
+        return newProductBean.getProduct(productID);
+    }
+    
+    public List<Product> getProductByName(){
+        return newProductBean.getProduct(description);
+    }
 }

@@ -98,4 +98,12 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
     public void removeProduct(String description){
         Query query = em.createNamedQuery("Product.deleteProductFromTable").setParameter("description", description);
     }
+
+    @Override
+    public List<Product> getProduct(String description) {
+        // create named query and set parameter
+        Query query = em.createNamedQuery("Product.findByDescription")
+                .setParameter("description", description);
+        return query.getResultList();
+    }
 }

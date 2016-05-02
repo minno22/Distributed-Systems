@@ -32,7 +32,12 @@ and open the template in the editor.
         </h3>
         <br/><br/>
         <h:form>
-            <h:commandButton action="index" value="Back to Start"/>
+            <br/><br/>
+            <h:commandButton action="#{shoppingCartBean.checkout()}" value="Checkout"/>
+            <br/><br/>
+            <h:commandButton action="#{shoppingCartBean.cancel()}" value="Cancel"/>
+            <br/><br/>
+            <h:commandButton action="index" value="Back to Browse"/>
         </h:form>
     </h:body>
 </html>

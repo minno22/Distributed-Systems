@@ -9,36 +9,35 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Cart</title>
+        <title>Catalog</title>
     </h:head>
     <h:body>
-        <h1>My Shopping Cart</h1>
+        <h1>Product ID: #{productBean.productID}</h1>
         <h3>
-            <h:dataTable value="#{shoppingCartBean.displayCart()}" 
+            <h:dataTable value="#{productBean.getProductByID()}" 
                          var="product" border="1" cellpadding="10">
                 <h:column>
-                    <f:facet name="header">Name</f:facet>
-                        #{product.item}
+                    <f:facet name="header">Description</f:facet>
+                        #{product.description}
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Quantity</f:facet>
-                        #{product.quantity}
+                    <f:facet name="header">Price</f:facet>
+                        #{product.purchaseCost}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Available Stock</f:facet>
+                        #{product.quantityOnHand}
                 </h:column>
                 <h:column>
                     <h:form>
-                        <h:commandButton action="#{shoppingCartBean.removeItem2(product.item, 1)}" value="Remove"/>
+                        <h:commandButton action="#{shoppingCartBean.addToCart2(product.description, 1)}" value="Add To Cart"/>
                     </h:form>
                 </h:column>
             </h:dataTable>
-        </h3>
-        <br/><br/>
+            <br/><br/>
             <h:form>
-                <br/><br/>
-                <h:commandButton action="#{shoppingCartBean.checkout()}" value="Checkout"/>
-                <br/><br/>
-                <h:commandButton action="#{shoppingCartBean.cancel()}" value="Cancel"/>
-                <br/><br/>
                 <h:commandButton action="browseOptions" value="Back to Browse"/>
             </h:form>
+        </h3>
     </h:body>
 </html>

@@ -38,5 +38,7 @@ public interface ProductFacadeLocal {
     
     public Product getProduct(int id);
     
+    public List<Product> getProduct(String description);
+    
     void removeProduct(String description);
 }

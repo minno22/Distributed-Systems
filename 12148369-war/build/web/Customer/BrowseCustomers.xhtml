@@ -8,26 +8,24 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Browse Catalog</title>
+        <title>Browse Users</title>
     </h:head>
     <h:body>
-        <h1>Browse Catalog</h1>
+        <h1>Browse Users</h1>
         <h:form>
             <h:panelGrid columns="2">
                 <br/>
-                <h:commandButton action="BrowseAllProducts" value="Browse all Products"/>
+                <h:commandButton action="BrowseAllCustomers" value="Browse all Customers"/>
                 <br/>
-                Enter Product ID: 
-                <h:inputText value="#{productBean.productID}"/>
+                Enter Customer ID: 
+                <h:inputText value="#{customerBean.customerID}"/>
                 <br/>
-                <h:commandButton action="showProductsById" value="Browse Products by ID"/>
-                Enter Product Name: 
-                <h:inputText value="#{productBean.description}"/>
+                <h:commandButton action="showCustomersById" value="Browse Customers by ID"/>
+                Enter Customer Name: 
+                <h:inputText value="#{customerBean.customerName}"/>
                 <br/>
-                <h:commandButton action="showProductsByName" value="Browse Products by Name"/>
+                <h:commandButton action="showCustomersByName" value="Browse Customers by Name"/>
             </h:panelGrid>
-            <br/><br/>
-            <h:commandButton action="myCart" value="My Cart"/>
             <br/><br/>
             <h:commandButton action="customerMainPage" value="Main Page"/>
         </h:form>

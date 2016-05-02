@@ -5,12 +5,40 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cart</title>
+    </h:head>
+    <h:body>
+        <h1>My Shopping Cart</h1>
+        <h3>
+            <h:dataTable value="#{shoppingCartBean.displayCart()}" 
+                         var="product" border="1" cellpadding="10">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{product.item}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                        #{product.quantity}
+                </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton action="#{shoppingCartBean.removeItem2(product.item, 1)}" value="Remove"/>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        </h3>
+        <br/><br/>
+            <h:form>
+                <br/><br/>
+                <h:commandButton action="#{shoppingCartBean.checkout()}" value="Checkout"/>
+                <br/><br/>
+                <h:commandButton action="#{shoppingCartBean.cancel()}" value="Cancel"/>
+                <br/><br/>
+                <h:commandButton action="browseOptions" value="Back to Browse"/>
+            </h:form>
+    </h:body>
 </html>

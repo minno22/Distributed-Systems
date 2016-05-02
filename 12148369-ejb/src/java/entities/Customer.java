@@ -67,11 +67,11 @@ public class Customer implements Serializable {
     @Column(name = "PHONE")
     private String phone;
     // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
-    @Size(max = 12)
+    @Size(max = 500)
     @Column(name = "FAX")
     private String fax;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 500)
+    @Size(max = 40)
     @Column(name = "EMAIL")
     private String email;
     @Column(name = "CREDIT_LIMIT")
