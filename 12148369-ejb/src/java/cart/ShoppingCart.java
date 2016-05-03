@@ -81,7 +81,7 @@ public class ShoppingCart implements CartInterface{
         while (it.hasNext()) {
             k = it.next();
             if(items.get(k) > 0){ //only return items we have actully added to the cart and not 0
-            message += k + ", quantity: " + items.get(k) + "\n<br>";
+            message += k + ", quantity: " + items.get(k) + "\n";
             }
         }
         return message;
@@ -91,16 +91,16 @@ public class ShoppingCart implements CartInterface{
     
     @Override
     public List <String> getAllItems(){
-    List <String> booksInCart = new ArrayList<>();
+    List <String> itemsInCart = new ArrayList<>();
         Set<String> keys = items.keySet();
         Iterator<String> it = keys.iterator();
         String k;
         while (it.hasNext()) {
             k = it.next();
-            booksInCart.add(k);
+            itemsInCart.add(k);
         }
         
-       return booksInCart;
+       return itemsInCart;
     }
     
     @Override

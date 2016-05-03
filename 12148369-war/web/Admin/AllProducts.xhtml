@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Catalog</title>
+    </h:head>
+    <h:body>
+        <h1>All Products: </h1>
+        <h3>
+            <h:dataTable value="#{productBean.getAllProducts()}" 
+                         var="product" border="1" cellpadding="10">
+                <h:column>
+                    <f:facet name="header">Description</f:facet>
+                        #{product.description}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                        #{product.purchaseCost}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Available Stock</f:facet>
+                        #{product.quantityOnHand}
+                </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton action="#{shoppingCartBean.addToCart2(product.description, 1)}" value="Add To Cart"/>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+            <br/><br/>
+            <h:form>
+                <h:commandButton action="adminMainPage" value="Back to Menu"/>
+            </h:form>
+        </h3>
+    </h:body>
+</html>

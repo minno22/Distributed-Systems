@@ -86,5 +86,14 @@ public class PurchaseOrderFacade extends AbstractFacade<PurchaseOrder> implement
         // return query result
         return query.getResultList();
     }
+
+    @Override
+    public List<PurchaseOrder> getOrdersCustID(int ID) {
+        // create named query and set parameter
+        Query query = em.createNamedQuery("PurchaseOrder.findByCustomerID")
+                .setParameter("customerId", ID);
+        // return query result
+        return query.getResultList();
+    }
     
 }

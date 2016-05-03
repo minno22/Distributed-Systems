@@ -9,7 +9,11 @@
         <h:form>
             <h1>Remove Product</h1>
             Remove Product: <h:inputText value="#{productBean.description}"/><br/><br/>
-            <h:commandButton value="Remove" action="#{productBean.removeProduct()}"></h:commandButton><br/><br/><br/>
+            <h:commandButton value="Remove" action="itemRemoved"></h:commandButton><br/><br/><br/>
         </h:form>
+        <br/><br/>
+            <h:form>
+                <h:commandButton action="adminMainPage" value="Back to Menu"/>
+            </h:form>
     </h:body>
 </html>

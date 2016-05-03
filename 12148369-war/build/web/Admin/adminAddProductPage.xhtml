@@ -11,7 +11,7 @@
         Product Name: <h:inputText value="#{productBean.description}"/><br/><br/>
         Product Cost: <h:inputText value="#{productBean.cost}"/><br/><br/>
         Quantity: <h:inputText value="#{productBean.quantity}"/><br/><br/>
-        <h:commandButton value="Add Product" action="#{productBean.addNewProduct()}"></h:commandButton><br/><br/><br/>
+        <h:commandButton value="Add Product" action="itemAdded"></h:commandButton><br/><br/><br/>
         <h:commandButton value="Back to admin page" action="adminMainPage"></h:commandButton>
         </h:form>
     </h:body>

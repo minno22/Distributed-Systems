@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ProductFacade.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/PurchaseOrderFacadeLocal.java</file>
             <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/conf/persistence.xml</file>
             <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/CustomerFacade.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/Customer.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/ProductFacadeLocal.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/Product.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/cart/ShoppingCart.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/logging/MessageBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/PurchaseOrderFacade.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/entities/PurchaseOrder.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/beans/CustomerFacadeLocal.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-ejb/src/java/cart/CartInterface.java</file>
         </group>
     </open-files>
 </project-private>

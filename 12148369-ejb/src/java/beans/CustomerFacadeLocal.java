@@ -38,7 +38,7 @@ public interface CustomerFacadeLocal {
     
     public List<Customer> getCustomerByCity(String c);
     
-    public void update(int id, String name, String city, String state);
+    public void updateAccount(int id, String name, String city, String state);
     
     public Customer getCustomer(int id);
     

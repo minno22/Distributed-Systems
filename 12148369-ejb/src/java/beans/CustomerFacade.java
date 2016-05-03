@@ -117,7 +117,7 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
     }
     
     @Override
-    public void update(int id, String name, String password, String message) {
+    public void updateAccount(int id, String name, String password, String message) {
         Customer customer = getCustomer(id);
         if (customer != null) {
             customer.setName(name);

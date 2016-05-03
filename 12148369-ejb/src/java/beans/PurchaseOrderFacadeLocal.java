@@ -36,4 +36,6 @@ public interface PurchaseOrderFacadeLocal {
     
     public List<PurchaseOrder> getAllOrders();
     
+    public List<PurchaseOrder> getOrdersCustID(int ID);
+    
 }

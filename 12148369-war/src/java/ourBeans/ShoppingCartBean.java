@@ -5,11 +5,14 @@
  */
 package ourBeans;
 
+import beans.ProductFacadeLocal;
+import beans.PurchaseOrderFacadeLocal;
 import cart.ShoppingCart;
 import entities.Product;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ejb.NoSuchEJBException;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
@@ -26,6 +29,10 @@ public class ShoppingCartBean {
 
     @EJB
     ShoppingCart sc;
+    
+    @EJB private ProductFacadeLocal newProductBean;
+    
+    @EJB public PurchaseOrderFacadeLocal poBean;
     
     public String cartItem;
     public int quantity;
@@ -63,17 +70,21 @@ public class ShoppingCartBean {
     }
     
     public void addToCart2(String item, int quant){
+        cartItem = item;
+        quantity = quant;
         if (checkAvailability()){
-            sc.addItem(item, quant);
+            sc.addItem(cartItem, quantity);
         }
+        else
+            System.out.print("DEBUG: Insufficient stock");//should display error message to user here
     }
     
     public boolean checkAvailability(){
-        //List<Product> allProds = productBean.getAll();
-        //for (int i = 0; i < allProds.size(); i++)
-            //if(allProds.get(i).getDescription() == cartItem && allProds.get(i).getQuantityOnHand() >= quantity)
+        List<Product> allProds = newProductBean.getAllProducts();
+        for (int i = 0; i < allProds.size(); i++)
+           if((allProds.get(i).getDescription().equals(cartItem)) && (allProds.get(i).getQuantityOnHand() >= quantity))
                 return true;
-        //return false;
+        return false;
     }
     
     public void removeItem(){
@@ -85,36 +96,49 @@ public class ShoppingCartBean {
     }
     
     public void checkout(){
-        sc.checkout();
         //reduce quantity of product on hand
+        List<ShoppingCartItemObject> items = displayCart();
+        for (int i = 0; i < items.size(); i++){
+            decreaseQuantity(items.get(i).item, items.get(i).quantity);
+            poBean.addOrder(0, myProfileBean.getID(), quantity);
+        }
+        
+      /*  LoggerBean lb = new LoggerBean();
+        lb.setMessage("Checking out");
+        lb.sendMessage();*/
+        
+        sc.checkout();
     }
     
     public void cancel(){
         sc.cancel();
     }
     
-    public List<Product> displayAllItems(){
-        List<String> inCart = sc.getAllItems();
-        //List<Product> allProds = productBean.getAll();
-        List<Product> toReturn = new ArrayList<Product>();
-        //for (int i = 0; i < inCart.size(); i++)
-            //for (int j = 0; j < allProds.size(); j++)
-                //if(allProds.get(j).getDescription() == inCart.get(i).getDescription())
-                    //toReturn.add(allProds.get(j));
-        return toReturn;
-    }
-    
     public List<ShoppingCartItemObject> displayCart(){
-        List<String> inCart = sc.getAllItems();
-        List<Integer> inCartQs = sc.getAllAmounts();
-        List<ShoppingCartItemObject> toReturn = new ArrayList<ShoppingCartItemObject>();
-        for (int i = 0; i < inCart.size(); i++){
-            toReturn.add(new ShoppingCartItemObject((int)inCartQs.get(i), inCart.get(i)));
+        try{
+            List<String> inCart = sc.getAllItems();
+            List<Integer> inCartQs = sc.getAllAmounts();
+            List<ShoppingCartItemObject> toReturn = new ArrayList<ShoppingCartItemObject>();
+            for (int i = 0; i < inCart.size(); i++){
+               toReturn.add(new ShoppingCartItemObject((int)inCartQs.get(i), inCart.get(i)));
+            }
+            return toReturn;
         }
-        return toReturn;
+        catch(NoSuchEJBException e){
+            System.out.println("DEBUG " + e);
+        }
+        return null;
     }
     
     public String viewCart(){
         return sc.getItemList();
+    }
+    
+    public void decreaseQuantity(String desc, int amount){
+        Product p = newProductBean.getProduct(desc).get(0);
+        int id = p.getProductId();
+        int quantityOnHand = p.getQuantityOnHand();
+        int newQuantity = quantityOnHand - amount;
+        newProductBean.updateProduct(id, p.getDescription(), p.getPurchaseCost().intValue(), newQuantity);
     }
 }

@@ -72,12 +72,12 @@ public class VerifyUserBean {
         if(!(existingCustomer.isEmpty())){ //CHECK IF THE CUSTOMER EXISTS FIRST
             if(existingCustomer.equals(newCustomerBean.getCustomerByName(username))) //CHECKS IF THE NAMES MATCH 
             {
-               if(username.equals("joe") && password.equals("1D10T")){
+               if(username.equals("joe") && password.equals("1D10T?")){
                    getUserInfo();
                    return "Customer/customerMainPage";
                }
                else if(username.equals("toor") && password.equals("4uldo0!"))
-                   return "adminMainPage";
+                   return "Admin/adminMainPage";
                else return "invalidLogin";
             }
                 

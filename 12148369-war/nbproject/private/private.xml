@@ -3,10 +3,43 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/purchases.xhtml</file>
             <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/showCustomerByCity.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/invalidLogin.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/BrowseAllCustomers.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/BrowseCustomers.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/AllProducts.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/checkout.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/browseOptions.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/login.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/showCustomersById.xhtml</file>
             <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/niallsPackage/MyBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/cartTesting.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/itemRemoved.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/BrowseAllProducts.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/ShoppingCartBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/myCart.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/CustomerBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/ProductBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/ShoppingCartItemObject.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/adminAddProductPage.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/customerMainPage.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/LoggerBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/cancel.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/showProductsByName.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/EditProfile.xhtml</file>
             <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/showCustomerByName.xhtml</file>
-            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/index.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/adminMainPage.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/showProductsById.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/adminRemoveProduct.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/adminUpdateStock.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/myProfileBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Customer/showCustomersByName.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/src/java/ourBeans/VerifyUserBean.java</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Niall_index.xhtml</file>
+            <file>file:/C:/Users/Niall/Documents/NetBeansProjects/12148369/12148369-war/web/Admin/itemAdded.xhtml</file>
         </group>
     </open-files>
 </project-private>

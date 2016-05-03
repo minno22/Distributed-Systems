@@ -85,4 +85,20 @@ public class ProductBean
     public List<Product> getProductByName(){
         return newProductBean.getProduct(description);
     }
+    
+    public void increaseQuantity2(){
+        Product p = newProductBean.getProduct(productID);
+        int quantityOnHand = p.getQuantityOnHand();
+        int newQuantity = quantityOnHand + quantity;
+        newProductBean.updateProduct(productID, p.getDescription(), p.getPurchaseCost().intValue(), newQuantity);
+    }
+    
+    public void decreaseQuantity2(){
+        Product p = newProductBean.getProduct(productID);
+        int quantityOnHand = p.getQuantityOnHand();
+        int newQuantity = quantityOnHand - quantity;
+        if (newQuantity < 0)
+            newQuantity = 0;
+        newProductBean.updateProduct(productID, p.getDescription(), p.getPurchaseCost().intValue(), newQuantity);
+    }
 }

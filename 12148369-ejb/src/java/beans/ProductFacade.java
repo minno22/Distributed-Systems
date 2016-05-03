@@ -46,6 +46,7 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
             int id = (Integer) em.createNamedQuery("Product.findMaxId").getSingleResult();
             id++;
             Product product = new Product();
+            product.setDescription(Description);
             product.setProductId(id);
             product.setPurchaseCost(new BigDecimal(cost, MathContext.DECIMAL64));
             product.setQuantityOnHand(quantity);
@@ -58,7 +59,7 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
             product.setProductCode(pc);
             
             query = em.createNamedQuery("Manufacturer.findByManufacturerId")
-                .setParameter("manufacturerId", "19985678");
+                .setParameter("manufacturerId", 19985678);
             
             Manufacturer man = (Manufacturer) query.getSingleResult();
             product.setManufacturerId(man);
@@ -78,10 +79,11 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
     }
 
     @Override
-    public void update(int id, String Description, double cost, int quantity) {
-          Product prod = getProduct(id);
-        if (prod != null) {
-            prod.setQuantityOnHand(quantity);
+    public void updateProduct(int id, String Description, double cost, int quantity) {
+        Product product = getProduct(id);
+        if (product != null){
+            product.setPurchaseCost(new BigDecimal(cost, MathContext.DECIMAL64));
+            product.setQuantityOnHand(quantity);
         }
     }
 
@@ -97,6 +99,7 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
     @Override
     public void removeProduct(String description){
         Query query = em.createNamedQuery("Product.deleteProductFromTable").setParameter("description", description);
+        query.executeUpdate();
     }
 
     @Override
@@ -106,4 +109,5 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
                 .setParameter("description", description);
         return query.getResultList();
     }
+
 }

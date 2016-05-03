@@ -61,10 +61,14 @@ public class myProfileBean {
     
     public void editAccount(){
         Customer cust = customerBean.getCustomer(customerID);
-        customerBean.update(customerID, cust.getName(), cust.getCity(), customerMessage);
+        customerBean.updateAccount(customerID, cust.getName(), cust.getCity(), customerMessage);
     }
     
     public static void setID(int id){
         customerID = id;
+    }
+    
+     public static int getID(){
+        return customerID;
     }
 }

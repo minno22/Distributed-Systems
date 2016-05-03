@@ -34,7 +34,7 @@ public interface ProductFacadeLocal {
     
     public List<Product> getAllProducts();
     
-    public void update(int id, String Description, double cost, int quantity);
+    public void updateProduct(int id, String Description, double cost, int quantity);
     
     public Product getProduct(int id);
     

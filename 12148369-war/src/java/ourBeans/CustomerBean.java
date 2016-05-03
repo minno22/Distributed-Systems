@@ -6,7 +6,9 @@
 package ourBeans;
 
 import beans.CustomerFacadeLocal;
+import beans.PurchaseOrderFacadeLocal;
 import entities.Customer;
+import entities.PurchaseOrder;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -31,6 +33,8 @@ public class CustomerBean {
     
     @EJB
     CustomerFacadeLocal customerBean;
+    
+    @EJB public PurchaseOrderFacadeLocal poBean;
     
     public String customerName;
     public int customerID;
@@ -83,5 +87,9 @@ public class CustomerBean {
     
     public void insertCustomer(){
         customerBean.addCustomer(customerName, customerPassword); //add message later
+    }
+    
+    public List<PurchaseOrder> getPOs(){
+        return poBean.getAllOrders();
     }
 }

@@ -9,16 +9,13 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Niall JPQL Demo</title>
+        <title>Item Removed</title>
     </h:head>
     <h:body>
-        <h1>#{myBean.testCart()}</h1>
-        <h3>
-           
-        </h3>
-        <br/><br/>
+        <h1>Item Removed! #{productBean.removeProduct()}#{loggerBean.setMessage("Product Removed")}#{loggerBean.sendMessage()}</h1>
         <h:form>
-            <h:commandButton action="index" value="Back to Start"/>
+            <br/><br/>
+            <h:commandButton action="adminMainPage" value="Main Menu"/>
         </h:form>
     </h:body>
 </html>
